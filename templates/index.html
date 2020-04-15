@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   <style>
+        .div_container {
+            text-align:center;
+            max-width: 800px
+
+         }
+         .table-head th{
+            text-align:center
+            }
+
+   </style>
+
+</head>
+<body> 
+
+<h2>Covid-19</h2>
+
+<div class="container div_container">
+  <table class="table table-bordered">
+    <tr class="table-head">
+        <th>State</th>
+        <th>Total Case</th>
+        <th>New Case</th>
+        <th>Total Death</th>
+        <th>New Death</th>
+    </tr>
+    {% for item in s %}
+    <tr>
+        <td>{{item.state}}</td>
+        <td>{{item.confirmed}}</td>
+        <td>{{item.deltaconfirmed}}</td>
+        <td style="background-color:red;color:white">{{item.deaths}}</td>
+        <td>{{item.deltadeaths}}</td>
+    </tr>
+    {% endfor %}
+    </table>
+</div>
+
+
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+
+</body>
+</html>
