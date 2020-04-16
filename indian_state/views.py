@@ -10,8 +10,8 @@ def home(request):
     data = req.json()
     s=data['statewise']
     return render(request,'index.html',{'s':s})
-#for i in range(1,4):
-    #print(s[i]['state'])
-    #print(s[i]['confirmed'])
-    #print(s[i]['deaths'])
+
+def check_symptom(request):
+    return render(request,'check_symptom.html')
+
 
