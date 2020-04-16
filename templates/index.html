@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
+{% extends 'header.html'%}
+{% block counter %}
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
    <style>
         .div_container {
             text-align:center;
@@ -18,10 +14,11 @@
 
    </style>
 
-</head>
-<body> 
 
+<body> 
+  
 <h2>Covid-19</h2>
+
 
 <div class="container div_container">
   <table class="table table-bordered">
@@ -64,4 +61,4 @@ for (i = 0; i < coll.length; i++) {
 </script>
 
 </body>
-</html>
+{% endblock %}
