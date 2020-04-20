@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb5f9105-0906-4180-9f22-a9a3306b2629" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +32,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ColorWorld" />
   </component>
   <component name="RunManager">
     <configuration name="views" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -89,6 +88,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="463" y="117" key="FileChooserDialogImpl" timestamp="1587186678712">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="117" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1587186678712" />
     <state width="1344" height="174" key="GridCell.Tab.0.bottom" timestamp="1586914092128">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
