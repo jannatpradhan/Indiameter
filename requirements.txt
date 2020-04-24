@@ -34,7 +34,7 @@ pycparser==2.19
 PyJWT==1.7.1
 pylint==2.2.2
 PyMySQL==0.9.3
-pyodbc==4.0.28
+
 pyOpenSSL==19.0.0
 PySocks==1.7.1
 python-social-auth==0.3.6
