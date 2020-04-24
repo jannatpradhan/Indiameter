@@ -4,5 +4,7 @@ from indian_state import views
 urlpatterns = [
     
     path('', views.home , name='Home Page'),
-    path('check', views.check_symptom , name='check_symptom')
+    path('check', views.check_symptom , name='check_symptom'),
+    path('login', views.login , name='login'),
+    
 ]

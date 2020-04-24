@@ -6,12 +6,23 @@ import requests
 
 # Create your views here.
 def home(request):
+    
+    total=requests.get('https://api.covid19api.com/summary')
+    s=total.text
+    data=json.loads(s)
+    Total=data['Global']['TotalConfirmed']
+    new_case=data['Global']['NewConfirmed']
+    Total_death=data['Global']['TotalDeaths']
+
     req = requests.get('https://api.covid19india.org/data.json')
-    data = req.json()
-    s=data['statewise']
-    return render(request,'index.html',{'s':s})
+    data1 = req.json()
+    s=data1['statewise']
+    return render(request,'index.html',{'s':s,'Total':Total,'new_case':new_case,'Total_death':Total_death})
 
 def check_symptom(request):
     return render(request,'check_symptom.html')
+
+def login(request):
+    return render(request,'base.html')
 
 

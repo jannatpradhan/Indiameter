@@ -3,18 +3,30 @@
 {% block base %}
 <div align="center">
 <form action=" ">
-  <label for="fname">Fever</label>&nbsp
+  <label for="fname">Are you experiencing cough,fever or difficulty in breathing ?</label>&nbsp
   Yes<input type="radio" name="1btn" value="1"/>&nbspNo<input type="radio" name="1btn" value="0"/><br><br>
-  <label for="fname">Fever</label>&nbsp
+  <label for="fname">Have you ever had diabetes,lung disease ,hypertension or heart disease ?</label>&nbsp
   Yes<input type="radio" name="2btn" value="1"/>&nbspNo<input type="radio" name="2btn" value="0"/><br><br>
-  <label for="fname">Fever</label>&nbsp
+  <label for="fname">Have you traveled anywhere internationally in the past 14 days ?</label>&nbsp
   Yes<input type="radio" name="3btn" value="1"/>&nbspNo<input type="radio" name="3btn" value="0"/><br><br>
-  <label for="fname">Fever</label>&nbsp
+  <label for="fname">Have interacted or lived with someone who has tested positive for COVID-19 ?</label>&nbsp
   Yes<input type="radio" name="4btn" value="1"/>&nbspNo<input type="radio" name="4btn" value="0"/><br><br>
-  <label for="fname">Fever</label>&nbsp
-  Yes<input type="radio" name="5btn" value="1"/>&nbspNo<input type="radio" name="6btn" value="0"/><br><br>
-  <input type="submit" value="Submit">
+  
+  {% if user.is_authenticated %}
+        <input type="submit" value="Check"/>
+  {% else %}
+      <script type="text/javascript">
+            alert("Signup before first")
+      </script>
+      
+        <a class="nav-link waves-effect waves-light" href="accounts/login"><i class="fa fa-google-plus">
+        Login to check</i></a>
+          
+  {% endif %}
+
+  
 </form>
 </div>
+
 
 {% endblock %}
