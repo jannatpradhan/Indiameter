@@ -60,6 +60,7 @@
             max-width: 800px
 
          }
+      
          .table-head th{
             text-align:center
             }
@@ -148,7 +149,9 @@
           
         }
         
-        
+        .heading{
+          width: 18%
+        }
       
       .main-card{
         cursor: pointer;
@@ -234,9 +237,10 @@
 
    {% for item in s %}
   <div class="collapsible1" style="background-color: white;">
+    <form >
       <table class="table1">
       <tr class="table1-head">
-          <th class="heading" style="width: 23%">State</th>
+          <th class="heading" >State</th>
           <th>Total</th>
           <th>New Case</th>
           <th>Total Death</th>
@@ -244,7 +248,7 @@
       </tr>
     
     <tr>
-        <td>{{item.state}}</td>
+        <td >{{item.state}}</td>
         <td>{{item.confirmed}}</td>
         <td>{{item.deltaconfirmed}}</td>
         <td style="background-color:red;color:white">{{item.deaths}}</td>
@@ -252,6 +256,8 @@
     </tr>
   </table>
   </div>
+  </form>
+
   <div class="content">
     <p>dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
   </div>
@@ -261,7 +267,7 @@
 
 
 <script>
-var coll = document.getElementsByClassName("collapsible");
+var coll = document.getElementsByClassName("collapsible1");
 var i;
 
 for (i = 0; i < coll.length; i++) {
