@@ -1,7 +1,7 @@
 {% extends 'header.html'%}
 {% block counter %}
 
-
+    
    <style>
       body, html {
         background-color:#EBECF0;
@@ -33,17 +33,15 @@
       .collapsible1:active {
           box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #EBECF0;
       }
-      .active:after {
-        content: "\2212";
-      }
       
       .content {
-        padding: 0 18px;
-        max-height: 0;
         overflow: hidden;
+        max-height: 0px;
         transition: max-height 0.2s ease-out;
         background-color: #f1f1f1;
-        text-align: center
+        text-align: center,
+        width:50%;
+        
       }
       .color-box{
           width:120px;
@@ -114,6 +112,13 @@
       .table0 td{
         width: 30%
       }
+      .table2{
+        text-align: center;
+        height: 30px;
+        width: 50%;
+        margin-left: 25%;
+        margin-right: 2%;
+      }
       
       @media only screen and (max-width:768px){
           .collapsible1 {
@@ -122,7 +127,7 @@
           padding: 0px;
           width: 95%;
           margin-left: 3%;
-          margin-top: -10px;
+          margin-top:-20px;
           color: black;
           height: 80px;
           border-radius: 10px;
@@ -139,19 +144,33 @@
           text-align: center;
         }
         .table1{
-          margin-top: 20px;
+          margin-top: 30px;
           height: 40px;
-          font-family: verdana;
+          
+
+          
 
         }
         .table1 td{
           font-size: 12px;
           
         }
+        .table1-state{
+          overflow: hidden;
+        
+        display:block;
+        width: 80px;
+        max-height: 35px;
+        }
+        .aerrow{
+          width: 20px;
+        }
         
         .heading{
           width: 18%
         }
+        
+
       
       .main-card{
         cursor: pointer;
@@ -160,7 +179,8 @@
         height: 110px;
         margin-left: 3%;
         margin-right: 2%;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
+        margin-top: 20px;
         position: -webkit-sticky;
         position: sticky;
         top: 0.1em;
@@ -200,8 +220,72 @@
         font-size: 14px;
         text-align: center;
       }
-    }
+    
+      .table-dist{
+      
+      
+      width: 97%;
+     
+      }
+      .table-dist th{
+      
+      font-size: 12px;
+      
+      }
+      .table-dist td{
+     
+      font-size: 13px;
+      
+      }
+      .dist-tr{
+     border-spacing: 10px;
+      border: 2px solid white;
+      border-radius: 20%
+      
+      }
+    .dist-total-th{
+      text-align: right;
 
+    }
+    .deceased-heading{
+      width:60px;
+      text-align: right;
+
+    }
+    .dist-td{
+      widows: 40px;
+    }
+    .dist-active{
+      text-align:right;
+      width:55px;
+    }
+    .active-dist{
+      text-align: right
+    }
+    .content{
+      margin-left: 15px; 
+      width: 95%;
+     
+
+    }
+    .district{
+      text-align: left;
+      width: 70px
+    }
+    .total{
+      text-align: right;
+      width:60px;
+
+    }
+    .recover{
+      text-align: right;
+      width:60px
+    }
+    .death{
+      text-align: right;
+      width: 50px
+    }
+  }
    </style>
 
 
@@ -210,7 +294,7 @@
   <div class="main-card" >
     <table class="table0" >
       <tr class="main-card-tr">
-          <th class="main-card-heading" colspan="2"></h4>WorldWide</h4></th>
+          <th class="main-card-heading" colspan="2"></h2>WorldWide</h2></th>
           <td rowspan="2" class="main-card-right" style="text-align: right;">
                  4/20/2020 02:23 PM
           </td>
@@ -223,7 +307,7 @@
       <tr>
         <td>New case:</td>
         <td>{{new_case}}+</td>
-        <td ><a href="/check" class="symptom" style="text-align: right;">Check symptom</a></td>
+        <td rowspan="2"><a href="/check" class="symptom" style="text-align: right;">Check symptom</a></td>
       </tr>
       <tr>
         <td>Total death:</td>
@@ -237,30 +321,116 @@
 
    {% for item in s %}
   <div class="collapsible1" style="background-color: white;">
-    <form >
+   
       <table class="table1">
       <tr class="table1-head">
-          <th class="heading" >State</th>
+          <th class="" >State</th>
           <th>Total</th>
           <th>New Case</th>
           <th>Total Death</th>
           <th>New Death</th>
+          <th class="aerrow">
+          <svg class="bi bi-chevron-down" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"/>
+          </svg>
+        </th>
       </tr>
-    
-    <tr>
-        <td >{{item.state}}</td>
+
+
+
+
+    <tr class="state-tr">
+        <td class="table1-state">{{item.state}}</td>
         <td>{{item.confirmed}}</td>
         <td>{{item.deltaconfirmed}}</td>
         <td style="background-color:red;color:white">{{item.deaths}}</td>
         <td>{{item.deltadeaths}}</td>
+        
     </tr>
+
   </table>
   </div>
-  </form>
 
-  <div class="content">
-    <p>dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-  </div>
+
+      
+      <div class="content" style="margin-top:5px;background-color: #EBECF0">
+        
+        <table class="table-dist" >
+
+          <tr class="table2-head" >
+              <th class="district">District</th>
+              <th class="dist-total-th" >Total</th>
+              <th class="recover">Recovered</th>
+              <th class="deceased-heading"  >Deceased</th>
+              <th class="dist-active">Active</th>
+          </tr>
+    
+    
+    
+    {% for item2 in item.district%}
+        <tr class="dist-tr">
+            <td class="district dist-td">{{item2.district}}</td>
+
+
+            <td class="total dist-td">
+                {% if item2.delta.confirmed%}
+                
+                <svg class="bi bi-arrow-up-short" width="1em" height="1em" viewBox="0 0 16 16" fill="orange" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M8 5.5a.5.5 0 01.5.5v5a.5.5 0 01-1 0V6a.5.5 0 01.5-.5z" clip-rule="evenodd"/>
+                  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l3 3a.5.5 0 01-.708.708L8 5.707 5.354 8.354a.5.5 0 11-.708-.708l3-3z" clip-rule="evenodd"/>
+                  
+                </svg>
+                <sub>
+                <i><b>{{item2.delta.confirmed}}</b></i>
+                </sub>
+                {% endif %}
+              
+              &nbsp{{item2.confirmed}}
+            </td>
+
+
+            <td class="recover dist-td">
+              {% if item2.delta.recovered%}
+              
+                <svg class="bi bi-arrow-up-short" width="1em" height="1em" viewBox="0 0 16 16" fill="green" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M8 5.5a.5.5 0 01.5.5v5a.5.5 0 01-1 0V6a.5.5 0 01.5-.5z" clip-rule="evenodd"/>
+                  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l3 3a.5.5 0 01-.708.708L8 5.707 5.354 8.354a.5.5 0 11-.708-.708l3-3z" clip-rule="evenodd"/>
+                </svg>
+                <sub>
+                <i><b>{{item2.delta.recovered}}</b></i>
+                </sub>
+              {% endif %}
+
+              &nbsp{{item2.recovered}}
+            </td>
+
+
+            <td class="death dist-td" >
+              
+                {% if item2.delta.deceased%}
+                <sub>
+                <svg class="bi bi-arrow-up-short" width="1em" height="1em" viewBox="0 0 16 16" fill="red" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M8 5.5a.5.5 0 01.5.5v5a.5.5 0 01-1 0V6a.5.5 0 01.5-.5z" clip-rule="evenodd"/>
+                  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l3 3a.5.5 0 01-.708.708L8 5.707 5.354 8.354a.5.5 0 11-.708-.708l3-3z" clip-rule="evenodd"/>
+                  
+                </svg>
+                <i><b>{{item2.delta.deceased}}</b></i>
+                </sub>
+                {% endif %}
+                
+                &nbsp{{item2.deceased}}
+                
+            </td>
+
+            <td class="active-dist dist-td">{{item2.active}}</td>
+            
+        </tr>
+    {% endfor %}
+      </table>
+      
+    </div>
+      
+
   {% endfor %}
 
 
@@ -282,6 +452,7 @@ for (i = 0; i < coll.length; i++) {
   });
 }
 </script>
+
 
 </body>
 {% endblock %}
