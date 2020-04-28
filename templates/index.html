@@ -37,10 +37,10 @@
       .content {
         overflow: hidden;
         max-height: 0px;
-        transition: max-height 0.2s ease-out;
+        transition: max-height 1.4s ease-out;
         background-color: #f1f1f1;
         text-align: center,
-        width:50%;
+        
         
       }
       .color-box{
@@ -119,6 +119,13 @@
         margin-left: 25%;
         margin-right: 2%;
       }
+      .table-dist{
+        margin-left: 28%;
+        width: 45%
+      }
+      .dist-td{
+        text-align: right
+      }
       
       @media only screen and (max-width:768px){
           .collapsible1 {
@@ -162,9 +169,7 @@
         width: 80px;
         max-height: 35px;
         }
-        .aerrow{
-          width: 20px;
-        }
+        
         
         .heading{
           width: 18%
@@ -223,7 +228,7 @@
     
       .table-dist{
       
-      
+        margin-left: 0px;
       width: 97%;
      
       }
@@ -268,6 +273,7 @@
      
 
     }
+    
     .district{
       text-align: left;
       width: 70px
@@ -292,11 +298,11 @@
 <body> 
   
   <div class="main-card" >
-    <table class="table0" >
+    <table class="table0" style="width:90%;height:70%;margin-top:-10px" >
       <tr class="main-card-tr">
           <th class="main-card-heading" colspan="2"></h2>WorldWide</h2></th>
-          <td rowspan="2" class="main-card-right" style="text-align: right;">
-                 4/20/2020 02:23 PM
+          <td rowspan="2" class="main-card-right" style="text-align: right;font-size:10px;">
+                 Last updated:&nbsp&nbsp&nbsp&nbsp<br>{{allind.lastupdatedtime}}
           </td>
       </tr>
       <tr>
@@ -359,17 +365,17 @@
 
           <tr class="table2-head" >
               <th class="district">District</th>
-              <th class="dist-total-th" >Total</th>
-              <th class="recover">Recovered</th>
-              <th class="deceased-heading"  >Deceased</th>
-              <th class="dist-active">Active</th>
+              <th class="dist-total-th dist-td" >Total</th>
+              <th class="recover dist-td">Recovered</th>
+              <th class="deceased-heading dist-td"  >Deceased</th>
+              <th class="dist-active dist-td">Active</th>
           </tr>
     
     
     
     {% for item2 in item.district%}
         <tr class="dist-tr">
-            <td class="district dist-td">{{item2.district}}</td>
+            <td class="district">{{item2.district}}</td>
 
 
             <td class="total dist-td">
@@ -413,7 +419,7 @@
                   <path fill-rule="evenodd" d="M8 5.5a.5.5 0 01.5.5v5a.5.5 0 01-1 0V6a.5.5 0 01.5-.5z" clip-rule="evenodd"/>
                   <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l3 3a.5.5 0 01-.708.708L8 5.707 5.354 8.354a.5.5 0 11-.708-.708l3-3z" clip-rule="evenodd"/>
                   
-                </svg>
+                </svg></b>
                 <i><b>{{item2.delta.deceased}}</b></i>
                 </sub>
                 {% endif %}
