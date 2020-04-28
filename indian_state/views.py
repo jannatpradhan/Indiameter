@@ -32,8 +32,7 @@ def home(request):
 
     return render(request,'index.html',{'allind':allind,'s':actualdata,'Total':Total,'new_case':new_case,'Total_death':Total_death})
 
-def check_symptom(request):
-    return render(request,'check_symptom.html')
+
 
 def login(request):
     return render(request,'base.html')
