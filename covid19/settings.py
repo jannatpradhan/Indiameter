@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*','whispering-sierra-55396.herokuapp.com','192.168.43.32']
 
-STATICFILES_DIRS=["../static"]
+
 # Application definition
 
 INSTALLED_APPS = [
