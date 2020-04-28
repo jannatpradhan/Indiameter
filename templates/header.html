@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Corona Meter</title>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css'>
-  
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.1/css/mdb.min.css'>
 </head>
 
 <!-- partial:index.partial.html -->
@@ -76,46 +77,6 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js'></script>
 <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js'></script>
-<script>
 
-    var coll = document.getElementsByClassName("collapsible1");
-    var i;
-    
-    for (i = 0; i < coll.length; i++) {
-      coll[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var content = this.nextElementSibling;
-        if (content.style.maxHeight){
-          content.style.maxHeight = null;
-        } else {
-          content.style.maxHeight = content.scrollHeight + "px";
-        } 
-      });
-    }
-    
-    document.addEventListener('DOMContentLoaded', function () {
-        var checkbox = document.querySelector('input[type="checkbox"]');
-      
-        checkbox.addEventListener('change', function () {
-          if (checkbox.checked) {
-            // do this
-          document.getElementById('toggle-total').innerHTML="{{Total}}+";
-          document.getElementById('all-india').innerHTML="Worldwide";
-          document.getElementById('des').innerHTML="{{Total_death}}+";
-          document.getElementById('ns').innerHTML="New Case";
-          document.getElementById('ns-data').innerHTML="{{new_case}}+";
-            
-          } else {
-          
-          document.getElementById('toggle-total').innerHTML="{{allind.confirmed}}";
-          document.getElementById('all-india').innerHTML="All India";
-          document.getElementById('des').innerHTML="{{allind.deaths}}";
-          document.getElementById('ns').innerHTML="Recovered";
-          document.getElementById('ns-data').innerHTML="{{allind.recovered}}";
-          }
-        });
-      });
-    
-</script>
 </body>
 </html>
