@@ -37,7 +37,8 @@
       .content {
         overflow: hidden;
         max-height: 0px;
-        transition: max-height 1.4s ease-out;
+        transition: max-height 1s ease;
+        
         background-color: #f1f1f1;
         text-align: center,
         
@@ -127,6 +128,72 @@
         text-align: right
       }
       
+      .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+      }
+      
+      .switch input { 
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+      
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+      }
+      
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+      }
+      
+      input:checked + .slider {
+        background-color: #2196F3;
+      }
+      
+      input:focus + .slider {
+        box-shadow: 0 0 1px #2196F3;
+      }
+      
+      input:checked + .slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+      }
+      
+      /* Rounded sliders */
+      .slider.round {
+        border-radius: 34px;
+      }
+      
+      .slider.round:before {
+        border-radius: 50%;
+      }
+      .main-cd-right{
+        text-align: center;
+      }
+      .main-card-heading{
+        width: 30%;
+        margin-top: 50px
+      }
       @media only screen and (max-width:768px){
           .collapsible1 {
         
@@ -191,7 +258,7 @@
         top: 0.1em;
 
         color: white;
-        font-size: 20px;
+        
         border-radius: 10px;
         background-color: #485461;
         background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
@@ -202,23 +269,27 @@
       }
 
       .table0 td{
-        font-size: 12px;
+        font-size: 10px;
         height: 40%;
-        text-align: left;
+        
         
       }
       .table0{
         margin-left: 10px;
         margin-right: 10px;
-        margin-top: 20px
+        
+        width:90%;
+        height:90%;
+        margin-top:-10px;
       }
       
       .main-card-heading{
         width: 40%;
         margin-top: 50px
       }
-      .main-card-right{
-        
+      .main-cd-right{
+        text-align: center;
+        font-size:11px;
       }
       .symptom{
         color: white;
@@ -291,6 +362,72 @@
       text-align: right;
       width: 50px
     }
+  
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 30px;
+      height: 16px;
+    }
+    
+    .switch input { 
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+    
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 13px;
+      width: 13px;
+      left: 2px;
+      bottom: 2px;
+      background-color: white;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+    
+    input:checked + .slider {
+      background-color: #2196F3;
+    }
+    
+    input:focus + .slider {
+      box-shadow: 0 0 1px #2196F3;
+    }
+    
+    input:checked + .slider:before {
+      -webkit-transform: translateX(13px);
+      -ms-transform: translateX(13px);
+      transform: translateX(13px);
+    }
+    
+    /* Rounded sliders */
+    .slider.round {
+      border-radius: 34px;
+    }
+    
+    .slider.round:before {
+      border-radius: 50%;
+    }
+    .worldwide{
+      height:40px;
+      font-size:13px;
+      text-align: center;
+      margin-top:10px
+    }
   }
    </style>
 
@@ -298,26 +435,32 @@
 <body> 
   
   <div class="main-card" >
-    <table class="table0" style="width:90%;height:70%;margin-top:-10px" >
-      <tr class="main-card-tr">
-          <th class="main-card-heading" colspan="2"></h2>WorldWide</h2></th>
-          <td rowspan="2" class="main-card-right" style="text-align: right;font-size:10px;">
-                 Last updated:&nbsp&nbsp&nbsp&nbsp<br>{{allind.lastupdatedtime}}
+    <table class="table0" >
+      <tr class="main-card-tr" style="height:35px;">
+          <th class="main-card-heading" colspan="2" id="all-india"></h2 >All India</h2></th>
+          <td rowspan="2" class="main-cd-right">
+                 Last updated:<br>{{allind.lastupdatedtime}}
           </td>
       </tr>
       <tr>
-        <td>Total Effected: </td>
-        <td>{{Total}}+</td>
+        <td >Total Effected: </td>
+        <td id="toggle-total">{{allind.confirmed}}</td>
         
       </tr>
       <tr>
-        <td>New case:</td>
-        <td>{{new_case}}+</td>
-        <td rowspan="2"><a href="/check" class="symptom" style="text-align: right;">Check symptom</a></td>
+        <td >Deceased:</td>
+        <td id="des">{{allind.deaths}}</td>
+        <td rowspan="2" class="worldwide">
+          Show Worldwide
+            <label class="switch" >
+                <input type="checkbox">
+                <div class="slider round"></div>
+              </label>
+        </td>
       </tr>
       <tr>
-        <td>Total death:</td>
-        <td>{{Total_death}}+</td>
+        <td id="ns">Newcase:</td>
+        <td id="ns-data">{{allind.recovered}}</td>
         
       </tr>
 
@@ -457,6 +600,29 @@ for (i = 0; i < coll.length; i++) {
     } 
   });
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+	var checkbox = document.querySelector('input[type="checkbox"]');
+  
+	checkbox.addEventListener('change', function () {
+	  if (checkbox.checked) {
+		// do this
+      document.getElementById('toggle-total').innerHTML="{{Total}}+";
+      document.getElementById('all-india').innerHTML="Worldwide";
+      document.getElementById('des').innerHTML="{{Total_death}}+";
+      document.getElementById('ns').innerHTML="New Case";
+      document.getElementById('ns-data').innerHTML="{{new_case}}+";
+		
+	  } else {
+      
+      document.getElementById('toggle-total').innerHTML="{{allind.confirmed}}";
+      document.getElementById('all-india').innerHTML="All India";
+      document.getElementById('des').innerHTML="{{allind.deaths}}";
+      document.getElementById('ns').innerHTML="Recovered";
+      document.getElementById('ns-data').innerHTML="{{allind.recovered}}";
+	  }
+	});
+  });
 </script>
 
 

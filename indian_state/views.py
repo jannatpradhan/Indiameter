@@ -4,17 +4,6 @@ from django.shortcuts import render,HttpResponse
 import requests
 
 
-req = requests.get('https://api.covid19india.org/data.json')
-data1 = req.json()
-s = data1['statewise'][0]
-print(s['active'])
-
-
-
-
-
-
-
 # Create your views here.
 def home(request):
     
