@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '(i^ng1l6=lyec-x9+nii708qj7$5+-*qo6s3e#w$n%&kz%^6yp'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*','whispering-sierra-55396.herokuapp.com','192.168.43.32','35.193.182.189 ']
 
