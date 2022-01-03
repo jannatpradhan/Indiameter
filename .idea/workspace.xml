@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb5f9105-0906-4180-9f22-a9a3306b2629" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/indian_state/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/indian_state/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -91,13 +91,9 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="242" y="0" key="SettingsEditor" timestamp="1606276766444">
+    <state x="442" y="165" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1641228560201">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="242" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1606276766444" />
-    <state x="492" y="279" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606276323222">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="492" y="279" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1606276323222" />
+    <state x="442" y="165" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1641228560201" />
   </component>
 </project>

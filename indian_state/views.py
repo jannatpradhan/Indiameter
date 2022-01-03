@@ -7,7 +7,7 @@ import requests
 # Create your views here.
 def home(request):
     
-    total=requests.get('https://api.covid19api.com/summary')
+    total=requests.get('https://api.covid19api.com/summary',verify=False)
     s=total.text
     data=json.loads(s)
     Total=data['Global']['TotalConfirmed']
