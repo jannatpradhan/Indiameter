@@ -31,7 +31,7 @@ pkgconfig==1.5.1
 psycopg2==2.8.5
 pycosat==0.6.3
 pycparser==2.19
-PyJWT==1.7.1
+PyJWT==2.4.0
 pylint==2.2.2
 PyMySQL==0.9.3
 
