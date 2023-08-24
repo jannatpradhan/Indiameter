@@ -6,13 +6,13 @@ import requests
 
 # Create your views here.
 def home(request):
-    
-    total=requests.get('https://api.covid19api.com/summary')
-    s=total.text
-    data=json.loads(s)
-    Total=data['Global']['TotalConfirmed']
-    new_case=data['Global']['NewConfirmed']
-    Total_death=data['Global']['TotalDeaths']
+
+   # total=requests.get('https://api.covid19api.com/summary')
+    #s=total.text
+    #data=json.loads(s)
+    #Total=data['Global']['TotalConfirmed']
+    #new_case=data['Global']['NewConfirmed']
+    #Total_death=data['Global']['TotalDeaths']
 
     req = requests.get('https://api.covid19india.org/data.json')
     data1 = req.json()
@@ -30,7 +30,8 @@ def home(request):
                 actualdata.append(item)
 
 
-    return render(request,'index.html',{'allind':allind,'s':actualdata,'Total':Total,'new_case':new_case,'Total_death':Total_death})
+    return render(request,'index.html',
+                  {'allind':allind,'s':actualdata,'Total':'Not available','new_case':'Not available','Total_death':'Not available'})
 
 
 
